@@ -8,7 +8,7 @@ LOG_TEXT = """<b>#NewUser
     
 ID - <code>{}</code>
 
-Nᴀᴍᴇ - {}</b>
+Nᴀᴍᴇ - {}</b> @AutoRequestAcceptXBot
 """
 
 @Client.on_message(filters.command('start'))
