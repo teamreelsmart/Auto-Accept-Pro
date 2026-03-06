@@ -27,3 +27,21 @@
 ## Support Group [VJ Support](https://telegram.me/vj_bot_disscussion)
 
 ## Credit - [Tech VJ](https://youtube.com/@Tech_VJ)
+
+
+## Deploy on Render
+
+1. Push this repository to GitHub.
+2. In Render, create a new **Web Service** from the repo.
+3. Render will auto-detect `render.yaml` (or set manually):
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `gunicorn app:app & python3 bot.py`
+4. Add required environment variables in Render:
+   - `API_ID`
+   - `API_HASH`
+   - `BOT_TOKEN`
+   - `DB_URI`
+   - `ADMINS`
+   - `LOG_CHANNEL`
+   - Optional: `DB_NAME`, `NEW_REQ_MODE`
+

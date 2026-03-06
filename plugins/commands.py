@@ -73,7 +73,13 @@ async def approve_new(client, m):
             await client.send_message(LOG_CHANNEL, LOG_TEXT.format(m.from_user.id, m.from_user.mention))
         await client.approve_chat_join_request(m.chat.id, m.from_user.id)
         try:
-            await client.send_message(m.from_user.id, "**Hello {}!\nWelcome To {}\n\n__Powered By : @TuneBots __**".format(m.from_user.mention, m.chat.title))
+            await client.send_message(
+                m.from_user.id,
+                "**Hello {}!\nWelcome To {}\n\n__Powered By : @TuneBots __**".format(m.from_user.mention, m.chat.title),
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("🔗 Join Snap_Lover8", url="https://t.me/Snap_Lover8")]]
+                )
+            )
         except:
             pass
     except Exception as e:
