@@ -38,6 +38,8 @@ class Database:
 
     async def get_session(self, id):
         user = await self.col.find_one({'id': int(id)})
-        return user['session']
+        if not user:
+            return None
+        return user.get('session')
 
 db = Database(DB_URI, DB_NAME)

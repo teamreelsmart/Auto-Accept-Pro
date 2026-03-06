@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: auto-accept-pro
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app & python3 bot.py
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: DB_URI
+        sync: false
+      - key: DB_NAME
+        value: vjjoinrequetbot
+      - key: ADMINS
+        sync: false
+      - key: LOG_CHANNEL
+        sync: false
+      - key: NEW_REQ_MODE
+        value: "true"
